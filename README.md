@@ -5,10 +5,6 @@
 This project presents an universal digital/smart factory technology framework.
 This projected is presented in the following publication:
 
-Paper Title	"Ubiquitous System Integration in Smart Factories"
-Journal 	"Sensors (ISSN 1424-8220; CODEN: SENSC9)"
-Special Issue 	"State-of-the-Art Sensors Technologies in Ireland 2020"
-
 # Purpuse
 The purpose of this framework is to connect industrial controllers (manufacturing machines) and IIoT devices (process monitoring) to factory services (Manufacturing Execution Systems), and collect-analyze-display data (Manufacturing Intelligence). This initial purpose represents the foundational needs of an interconnected digital factory, and the initial descriptive analytics needs of smart factory.
 
