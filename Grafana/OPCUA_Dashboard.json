@@ -1,0 +1,1605 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 10,
+    "links": [],
+    "panels": [
+      {
+        "aliasColors": {},
+        "breakPoint": "50%",
+        "cacheTimeout": null,
+        "combine": {
+          "label": "Others",
+          "threshold": 0
+        },
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fontSize": "80%",
+        "format": "s",
+        "gridPos": {
+          "h": 12,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "interval": null,
+        "legend": {
+          "percentage": true,
+          "show": true,
+          "values": false
+        },
+        "legendType": "Under graph",
+        "links": [],
+        "nullPointMode": "connected",
+        "pieType": "pie",
+        "pluginVersion": "7.4.1",
+        "strokeWidth": 1,
+        "targets": [
+          {
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT sum(\"TotalTime\") FROM \"OMRONCP2E_Timer\"  WHERE $timeFilter GROUP BY time(60m), \"Type\"",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "title": "OMRONCP2E (PLC 1)",
+        "type": "grafana-piechart-panel",
+        "valueName": "avg"
+      },
+      {
+        "backgroundColor": "rgba(128,128,128,0.1)",
+        "colorMaps": [
+          {
+            "$$hashKey": "object:5047",
+            "color": "#F2495C",
+            "text": "N/A"
+          }
+        ],
+        "crosshairColor": "#8F070C",
+        "datasource": null,
+        "display": "timeline",
+        "expandFromQueryS": 0,
+        "extendLastValue": true,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "highlightOnMouseover": true,
+        "id": 5,
+        "legendSortBy": "-ms",
+        "lineColor": "rgba(0,0,0,0.1)",
+        "metricNameColor": "#000000",
+        "pluginVersion": "7.4.1",
+        "rangeMaps": [
+          {
+            "$$hashKey": "object:522",
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "rowHeight": 50,
+        "showLegend": true,
+        "showLegendNames": true,
+        "showLegendPercent": true,
+        "showLegendValues": true,
+        "showTimeAxis": true,
+        "targets": [
+          {
+            "alias": "Status Run",
+            "groupBy": [
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "OMRONCP2E",
+            "orderByTime": "ASC",
+            "policy": "autogen",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "distinct"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "switch",
+                "operator": "=",
+                "value": "Status_Run"
+              }
+            ]
+          }
+        ],
+        "textSize": 24,
+        "textSizeTime": 12,
+        "timeOptions": [
+          {
+            "name": "Years",
+            "value": "years"
+          },
+          {
+            "name": "Months",
+            "value": "months"
+          },
+          {
+            "name": "Weeks",
+            "value": "weeks"
+          },
+          {
+            "name": "Days",
+            "value": "days"
+          },
+          {
+            "name": "Hours",
+            "value": "hours"
+          },
+          {
+            "name": "Minutes",
+            "value": "minutes"
+          },
+          {
+            "name": "Seconds",
+            "value": "seconds"
+          },
+          {
+            "name": "Milliseconds",
+            "value": "milliseconds"
+          }
+        ],
+        "timePrecision": {
+          "name": "Minutes",
+          "value": "minutes"
+        },
+        "timeTextColor": "#d8d9da",
+        "title": "PLC 1 Status Run",
+        "type": "natel-discrete-panel",
+        "units": "short",
+        "useTimePrecision": false,
+        "valueMaps": [
+          {
+            "$$hashKey": "object:520",
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueTextColor": "#000000",
+        "writeAllValues": false,
+        "writeLastValue": true,
+        "writeMetricNames": false
+      },
+      {
+        "backgroundColor": "rgba(128,128,128,0.1)",
+        "colorMaps": [
+          {
+            "$$hashKey": "object:5047",
+            "color": "#CCC",
+            "text": "N/A"
+          }
+        ],
+        "crosshairColor": "#8F070C",
+        "datasource": null,
+        "display": "timeline",
+        "expandFromQueryS": 0,
+        "extendLastValue": true,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 12,
+          "x": 12,
+          "y": 4
+        },
+        "highlightOnMouseover": true,
+        "id": 6,
+        "legendSortBy": "-ms",
+        "lineColor": "rgba(0,0,0,0.1)",
+        "metricNameColor": "#000000",
+        "pluginVersion": "7.4.1",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "rowHeight": 50,
+        "showLegend": true,
+        "showLegendNames": true,
+        "showLegendPercent": true,
+        "showLegendValues": true,
+        "showTimeAxis": true,
+        "targets": [
+          {
+            "alias": "Status Stop",
+            "groupBy": [
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "OMRONCP2E",
+            "orderByTime": "ASC",
+            "policy": "autogen",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "distinct"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "switch",
+                "operator": "=",
+                "value": "Status_Stop"
+              }
+            ]
+          }
+        ],
+        "textSize": 24,
+        "textSizeTime": 12,
+        "timeOptions": [
+          {
+            "name": "Years",
+            "value": "years"
+          },
+          {
+            "name": "Months",
+            "value": "months"
+          },
+          {
+            "name": "Weeks",
+            "value": "weeks"
+          },
+          {
+            "name": "Days",
+            "value": "days"
+          },
+          {
+            "name": "Hours",
+            "value": "hours"
+          },
+          {
+            "name": "Minutes",
+            "value": "minutes"
+          },
+          {
+            "name": "Seconds",
+            "value": "seconds"
+          },
+          {
+            "name": "Milliseconds",
+            "value": "milliseconds"
+          }
+        ],
+        "timePrecision": {
+          "name": "Minutes",
+          "value": "minutes"
+        },
+        "timeTextColor": "#d8d9da",
+        "title": "PLC 1 Status Stop",
+        "type": "natel-discrete-panel",
+        "units": "short",
+        "useTimePrecision": false,
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueTextColor": "#000000",
+        "writeAllValues": false,
+        "writeLastValue": true,
+        "writeMetricNames": false
+      },
+      {
+        "backgroundColor": "rgba(128,128,128,0.1)",
+        "colorMaps": [
+          {
+            "$$hashKey": "object:5047",
+            "color": "#CCC",
+            "text": "N/A"
+          }
+        ],
+        "crosshairColor": "#8F070C",
+        "datasource": null,
+        "display": "timeline",
+        "expandFromQueryS": 0,
+        "extendLastValue": true,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        },
+        "highlightOnMouseover": true,
+        "id": 7,
+        "legendSortBy": "-ms",
+        "lineColor": "rgba(0,0,0,0.1)",
+        "metricNameColor": "#000000",
+        "pluginVersion": "7.4.1",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "rowHeight": 50,
+        "showLegend": true,
+        "showLegendNames": true,
+        "showLegendPercent": true,
+        "showLegendValues": true,
+        "showTimeAxis": true,
+        "targets": [
+          {
+            "alias": "Status Ready",
+            "groupBy": [
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "OMRONCP2E",
+            "orderByTime": "ASC",
+            "policy": "autogen",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "distinct"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "switch",
+                "operator": "=",
+                "value": "Step_Ready"
+              }
+            ]
+          }
+        ],
+        "textSize": 24,
+        "textSizeTime": 12,
+        "timeOptions": [
+          {
+            "name": "Years",
+            "value": "years"
+          },
+          {
+            "name": "Months",
+            "value": "months"
+          },
+          {
+            "name": "Weeks",
+            "value": "weeks"
+          },
+          {
+            "name": "Days",
+            "value": "days"
+          },
+          {
+            "name": "Hours",
+            "value": "hours"
+          },
+          {
+            "name": "Minutes",
+            "value": "minutes"
+          },
+          {
+            "name": "Seconds",
+            "value": "seconds"
+          },
+          {
+            "name": "Milliseconds",
+            "value": "milliseconds"
+          }
+        ],
+        "timePrecision": {
+          "name": "Minutes",
+          "value": "minutes"
+        },
+        "timeTextColor": "#d8d9da",
+        "title": "PLC 1 Status Ready",
+        "type": "natel-discrete-panel",
+        "units": "short",
+        "useTimePrecision": false,
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueTextColor": "#000000",
+        "writeAllValues": false,
+        "writeLastValue": true,
+        "writeMetricNames": false
+      },
+      {
+        "aliasColors": {},
+        "breakPoint": "50%",
+        "cacheTimeout": null,
+        "combine": {
+          "label": "Others",
+          "threshold": 0
+        },
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fontSize": "80%",
+        "format": "s",
+        "gridPos": {
+          "h": 12,
+          "w": 12,
+          "x": 0,
+          "y": 12
+        },
+        "id": 8,
+        "interval": null,
+        "legend": {
+          "percentage": true,
+          "show": true,
+          "values": false
+        },
+        "legendType": "Under graph",
+        "links": [],
+        "nullPointMode": "connected",
+        "pieType": "pie",
+        "pluginVersion": "7.4.1",
+        "strokeWidth": 1,
+        "targets": [
+          {
+            "alias": "",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT sum(\"TotalTime\") FROM \"OMRONCP1L_Timer\"  WHERE $timeFilter GROUP BY time(60m), \"Type\"",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "title": "OMRONCP1L (PLC 2)",
+        "type": "grafana-piechart-panel",
+        "valueName": "avg"
+      },
+      {
+        "backgroundColor": "rgba(128,128,128,0.1)",
+        "colorMaps": [
+          {
+            "$$hashKey": "object:5047",
+            "color": "#CCC",
+            "text": "N/A"
+          }
+        ],
+        "crosshairColor": "#8F070C",
+        "datasource": null,
+        "display": "timeline",
+        "expandFromQueryS": 0,
+        "extendLastValue": true,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 12,
+          "x": 12,
+          "y": 12
+        },
+        "highlightOnMouseover": true,
+        "id": 9,
+        "legendSortBy": "-ms",
+        "lineColor": "rgba(0,0,0,0.1)",
+        "metricNameColor": "#000000",
+        "pluginVersion": "7.4.1",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "rowHeight": 50,
+        "showLegend": true,
+        "showLegendNames": true,
+        "showLegendPercent": true,
+        "showLegendValues": true,
+        "showTimeAxis": true,
+        "targets": [
+          {
+            "alias": "Status Run",
+            "groupBy": [
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "OMRONCP1L",
+            "orderByTime": "ASC",
+            "policy": "autogen",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "distinct"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "switch",
+                "operator": "=",
+                "value": "Status_Run"
+              }
+            ]
+          }
+        ],
+        "textSize": 24,
+        "textSizeTime": 12,
+        "timeOptions": [
+          {
+            "name": "Years",
+            "value": "years"
+          },
+          {
+            "name": "Months",
+            "value": "months"
+          },
+          {
+            "name": "Weeks",
+            "value": "weeks"
+          },
+          {
+            "name": "Days",
+            "value": "days"
+          },
+          {
+            "name": "Hours",
+            "value": "hours"
+          },
+          {
+            "name": "Minutes",
+            "value": "minutes"
+          },
+          {
+            "name": "Seconds",
+            "value": "seconds"
+          },
+          {
+            "name": "Milliseconds",
+            "value": "milliseconds"
+          }
+        ],
+        "timePrecision": {
+          "name": "Minutes",
+          "value": "minutes"
+        },
+        "timeTextColor": "#d8d9da",
+        "title": "PLC 2 Status Run",
+        "type": "natel-discrete-panel",
+        "units": "short",
+        "useTimePrecision": false,
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueTextColor": "#000000",
+        "writeAllValues": false,
+        "writeLastValue": true,
+        "writeMetricNames": false
+      },
+      {
+        "backgroundColor": "rgba(128,128,128,0.1)",
+        "colorMaps": [
+          {
+            "$$hashKey": "object:5047",
+            "color": "#CCC",
+            "text": "N/A"
+          }
+        ],
+        "crosshairColor": "#8F070C",
+        "datasource": null,
+        "display": "timeline",
+        "expandFromQueryS": 0,
+        "extendLastValue": true,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 12,
+          "x": 12,
+          "y": 16
+        },
+        "highlightOnMouseover": true,
+        "id": 10,
+        "legendSortBy": "-ms",
+        "lineColor": "rgba(0,0,0,0.1)",
+        "metricNameColor": "#000000",
+        "pluginVersion": "7.4.1",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "rowHeight": 50,
+        "showLegend": true,
+        "showLegendNames": true,
+        "showLegendPercent": true,
+        "showLegendValues": true,
+        "showTimeAxis": true,
+        "targets": [
+          {
+            "alias": "Status Stop",
+            "groupBy": [
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "OMRONCP1L",
+            "orderByTime": "ASC",
+            "policy": "autogen",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "distinct"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "switch",
+                "operator": "=",
+                "value": "Status_Stop"
+              }
+            ]
+          }
+        ],
+        "textSize": 24,
+        "textSizeTime": 12,
+        "timeOptions": [
+          {
+            "name": "Years",
+            "value": "years"
+          },
+          {
+            "name": "Months",
+            "value": "months"
+          },
+          {
+            "name": "Weeks",
+            "value": "weeks"
+          },
+          {
+            "name": "Days",
+            "value": "days"
+          },
+          {
+            "name": "Hours",
+            "value": "hours"
+          },
+          {
+            "name": "Minutes",
+            "value": "minutes"
+          },
+          {
+            "name": "Seconds",
+            "value": "seconds"
+          },
+          {
+            "name": "Milliseconds",
+            "value": "milliseconds"
+          }
+        ],
+        "timePrecision": {
+          "name": "Minutes",
+          "value": "minutes"
+        },
+        "timeTextColor": "#d8d9da",
+        "title": "PLC 2 Status Stop",
+        "type": "natel-discrete-panel",
+        "units": "short",
+        "useTimePrecision": false,
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueTextColor": "#000000",
+        "writeAllValues": false,
+        "writeLastValue": true,
+        "writeMetricNames": false
+      },
+      {
+        "backgroundColor": "rgba(128,128,128,0.1)",
+        "colorMaps": [
+          {
+            "$$hashKey": "object:5047",
+            "color": "#CCC",
+            "text": "N/A"
+          }
+        ],
+        "crosshairColor": "#8F070C",
+        "datasource": null,
+        "display": "timeline",
+        "expandFromQueryS": 0,
+        "extendLastValue": true,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 12,
+          "x": 12,
+          "y": 20
+        },
+        "highlightOnMouseover": true,
+        "id": 11,
+        "legendSortBy": "-ms",
+        "lineColor": "rgba(0,0,0,0.1)",
+        "metricNameColor": "#000000",
+        "pluginVersion": "7.4.1",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "rowHeight": 50,
+        "showLegend": true,
+        "showLegendNames": true,
+        "showLegendPercent": true,
+        "showLegendValues": true,
+        "showTimeAxis": true,
+        "targets": [
+          {
+            "alias": "Status Ready",
+            "groupBy": [
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "OMRONCP1L",
+            "orderByTime": "ASC",
+            "policy": "autogen",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "distinct"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "switch",
+                "operator": "=",
+                "value": "Step_Ready"
+              }
+            ]
+          }
+        ],
+        "textSize": 24,
+        "textSizeTime": 12,
+        "timeOptions": [
+          {
+            "name": "Years",
+            "value": "years"
+          },
+          {
+            "name": "Months",
+            "value": "months"
+          },
+          {
+            "name": "Weeks",
+            "value": "weeks"
+          },
+          {
+            "name": "Days",
+            "value": "days"
+          },
+          {
+            "name": "Hours",
+            "value": "hours"
+          },
+          {
+            "name": "Minutes",
+            "value": "minutes"
+          },
+          {
+            "name": "Seconds",
+            "value": "seconds"
+          },
+          {
+            "name": "Milliseconds",
+            "value": "milliseconds"
+          }
+        ],
+        "timePrecision": {
+          "name": "Minutes",
+          "value": "minutes"
+        },
+        "timeTextColor": "#d8d9da",
+        "title": "PLC 2 Status Ready",
+        "type": "natel-discrete-panel",
+        "units": "short",
+        "useTimePrecision": false,
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueTextColor": "#000000",
+        "writeAllValues": false,
+        "writeLastValue": true,
+        "writeMetricNames": false
+      },
+      {
+        "aliasColors": {},
+        "breakPoint": "50%",
+        "cacheTimeout": null,
+        "combine": {
+          "label": "Others",
+          "threshold": 0
+        },
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fontSize": "80%",
+        "format": "s",
+        "gridPos": {
+          "h": 12,
+          "w": 12,
+          "x": 0,
+          "y": 24
+        },
+        "id": 12,
+        "interval": null,
+        "legend": {
+          "percentage": true,
+          "show": true,
+          "values": false
+        },
+        "legendType": "Under graph",
+        "links": [],
+        "nullPointMode": "connected",
+        "pieType": "pie",
+        "pluginVersion": "7.4.1",
+        "strokeWidth": 1,
+        "targets": [
+          {
+            "alias": "",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT sum(\"TotalTime\") FROM \"OMRONCP1LM_Timer\"  WHERE $timeFilter GROUP BY time(60m), \"Type\"",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "title": "OMRONCP1L-M (PLC 3)",
+        "type": "grafana-piechart-panel",
+        "valueName": "avg"
+      },
+      {
+        "backgroundColor": "rgba(128,128,128,0.1)",
+        "colorMaps": [
+          {
+            "$$hashKey": "object:5047",
+            "color": "#CCC",
+            "text": "N/A"
+          }
+        ],
+        "crosshairColor": "#8F070C",
+        "datasource": null,
+        "display": "timeline",
+        "expandFromQueryS": 0,
+        "extendLastValue": true,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 12,
+          "x": 12,
+          "y": 24
+        },
+        "highlightOnMouseover": true,
+        "id": 13,
+        "legendSortBy": "-ms",
+        "lineColor": "rgba(0,0,0,0.1)",
+        "metricNameColor": "#000000",
+        "pluginVersion": "7.4.1",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "rowHeight": 50,
+        "showLegend": true,
+        "showLegendNames": true,
+        "showLegendPercent": true,
+        "showLegendValues": true,
+        "showTimeAxis": true,
+        "targets": [
+          {
+            "alias": "Status Run",
+            "groupBy": [
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "OMRONCP1LM",
+            "orderByTime": "ASC",
+            "policy": "autogen",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "distinct"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "switch",
+                "operator": "=",
+                "value": "Status_Run"
+              }
+            ]
+          }
+        ],
+        "textSize": 24,
+        "textSizeTime": 12,
+        "timeOptions": [
+          {
+            "name": "Years",
+            "value": "years"
+          },
+          {
+            "name": "Months",
+            "value": "months"
+          },
+          {
+            "name": "Weeks",
+            "value": "weeks"
+          },
+          {
+            "name": "Days",
+            "value": "days"
+          },
+          {
+            "name": "Hours",
+            "value": "hours"
+          },
+          {
+            "name": "Minutes",
+            "value": "minutes"
+          },
+          {
+            "name": "Seconds",
+            "value": "seconds"
+          },
+          {
+            "name": "Milliseconds",
+            "value": "milliseconds"
+          }
+        ],
+        "timePrecision": {
+          "name": "Minutes",
+          "value": "minutes"
+        },
+        "timeTextColor": "#d8d9da",
+        "title": "PLC 3 Status Run",
+        "type": "natel-discrete-panel",
+        "units": "short",
+        "useTimePrecision": false,
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueTextColor": "#000000",
+        "writeAllValues": false,
+        "writeLastValue": true,
+        "writeMetricNames": false
+      },
+      {
+        "backgroundColor": "rgba(128,128,128,0.1)",
+        "colorMaps": [
+          {
+            "$$hashKey": "object:5047",
+            "color": "#CCC",
+            "text": "N/A"
+          }
+        ],
+        "crosshairColor": "#8F070C",
+        "datasource": null,
+        "display": "timeline",
+        "expandFromQueryS": 0,
+        "extendLastValue": true,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 12,
+          "x": 12,
+          "y": 28
+        },
+        "highlightOnMouseover": true,
+        "id": 14,
+        "legendSortBy": "-ms",
+        "lineColor": "rgba(0,0,0,0.1)",
+        "metricNameColor": "#000000",
+        "pluginVersion": "7.4.1",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "rowHeight": 50,
+        "showLegend": true,
+        "showLegendNames": true,
+        "showLegendPercent": true,
+        "showLegendValues": true,
+        "showTimeAxis": true,
+        "targets": [
+          {
+            "alias": "Status Stop",
+            "groupBy": [
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "OMRONCP1LM",
+            "orderByTime": "ASC",
+            "policy": "autogen",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "distinct"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "switch",
+                "operator": "=",
+                "value": "Status_Stop"
+              }
+            ]
+          }
+        ],
+        "textSize": 24,
+        "textSizeTime": 12,
+        "timeOptions": [
+          {
+            "name": "Years",
+            "value": "years"
+          },
+          {
+            "name": "Months",
+            "value": "months"
+          },
+          {
+            "name": "Weeks",
+            "value": "weeks"
+          },
+          {
+            "name": "Days",
+            "value": "days"
+          },
+          {
+            "name": "Hours",
+            "value": "hours"
+          },
+          {
+            "name": "Minutes",
+            "value": "minutes"
+          },
+          {
+            "name": "Seconds",
+            "value": "seconds"
+          },
+          {
+            "name": "Milliseconds",
+            "value": "milliseconds"
+          }
+        ],
+        "timePrecision": {
+          "name": "Minutes",
+          "value": "minutes"
+        },
+        "timeTextColor": "#d8d9da",
+        "title": "PLC 3 Status Stop",
+        "type": "natel-discrete-panel",
+        "units": "short",
+        "useTimePrecision": false,
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueTextColor": "#000000",
+        "writeAllValues": false,
+        "writeLastValue": true,
+        "writeMetricNames": false
+      },
+      {
+        "backgroundColor": "rgba(128,128,128,0.1)",
+        "colorMaps": [
+          {
+            "$$hashKey": "object:5047",
+            "color": "#CCC",
+            "text": "N/A"
+          }
+        ],
+        "crosshairColor": "#8F070C",
+        "datasource": null,
+        "display": "timeline",
+        "expandFromQueryS": 0,
+        "extendLastValue": true,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 12,
+          "x": 12,
+          "y": 32
+        },
+        "highlightOnMouseover": true,
+        "id": 15,
+        "legendSortBy": "-ms",
+        "lineColor": "rgba(0,0,0,0.1)",
+        "metricNameColor": "#000000",
+        "pluginVersion": "7.4.1",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "rowHeight": 50,
+        "showLegend": true,
+        "showLegendNames": true,
+        "showLegendPercent": true,
+        "showLegendValues": true,
+        "showTimeAxis": true,
+        "targets": [
+          {
+            "alias": "Status Ready",
+            "groupBy": [
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "OMRONCP1LM",
+            "orderByTime": "ASC",
+            "policy": "autogen",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "distinct"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "switch",
+                "operator": "=",
+                "value": "Step_Ready"
+              }
+            ]
+          }
+        ],
+        "textSize": 24,
+        "textSizeTime": 12,
+        "timeOptions": [
+          {
+            "name": "Years",
+            "value": "years"
+          },
+          {
+            "name": "Months",
+            "value": "months"
+          },
+          {
+            "name": "Weeks",
+            "value": "weeks"
+          },
+          {
+            "name": "Days",
+            "value": "days"
+          },
+          {
+            "name": "Hours",
+            "value": "hours"
+          },
+          {
+            "name": "Minutes",
+            "value": "minutes"
+          },
+          {
+            "name": "Seconds",
+            "value": "seconds"
+          },
+          {
+            "name": "Milliseconds",
+            "value": "milliseconds"
+          }
+        ],
+        "timePrecision": {
+          "name": "Minutes",
+          "value": "minutes"
+        },
+        "timeTextColor": "#d8d9da",
+        "title": "PLC 3 Status Ready",
+        "type": "natel-discrete-panel",
+        "units": "short",
+        "useTimePrecision": false,
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueTextColor": "#000000",
+        "writeAllValues": false,
+        "writeLastValue": true,
+        "writeMetricNames": false
+      }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 27,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "OPCUA Readings Analysis",
+    "uid": "jBlqcPPMk",
+    "version": 49
+  }
